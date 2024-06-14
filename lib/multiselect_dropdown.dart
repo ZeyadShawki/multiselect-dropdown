@@ -49,7 +49,7 @@ class MultiSelectDropDown<T> extends StatefulWidget {
   final void Function(int index, ValueItem<T> option)? onOptionRemoved;
 
   // selected option
-  final Icon? selectedOptionIcon;
+  final Widget? selectedOptionIcon;
   final Color? selectedOptionTextColor;
   final Color? selectedOptionBackgroundColor;
   final Widget Function(BuildContext, ValueItem<T>)? selectedItemBuilder;
@@ -76,9 +76,9 @@ class MultiSelectDropDown<T> extends StatefulWidget {
 
   // dropdownfield configuration
   final Color? fieldBackgroundColor;
-  final Icon suffixIcon;
+  final Widget suffixIcon;
   final bool animateSuffixIcon;
-  final Icon? clearIcon;
+  final Widget? clearIcon;
   final Decoration? inputDecoration;
   final double? fieldBorderRadius;
   final BorderRadiusGeometry? radiusGeometry;
@@ -698,7 +698,7 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
       return null;
     }
 
-    final Icon icon = widget.selectedOptionIcon ??
+    final Widget icon = widget.selectedOptionIcon ??
         Icon(
           Icons.check,
           color: widget.optionTextStyle?.color ?? Colors.grey,
